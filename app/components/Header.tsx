@@ -22,7 +22,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <Link href="/">
             <div className="text-2xl font-extrabold text-[#3B312B]">
-              Arabica Cafe India
+              Arabica Cafe
             </div>
           </Link>
 

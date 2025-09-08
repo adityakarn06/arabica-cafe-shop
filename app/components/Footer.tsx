@@ -8,7 +8,7 @@ const Footer = () => {
           <div className="space-y-6">
             <h3 className="text-2xl font-bold tracking-wider text-white">ARABICA CAFE</h3>
             <address className="not-italic text-stone-400 text-sm leading-relaxed space-y-1">
-              <div>Arabica Cafe India</div>
+              <div>Arabica Cafe</div>
               <div>123 Mithanpura</div>
               <div>Muzaffarpur, Bihar 842001</div>
               <div>Bihar, India</div>

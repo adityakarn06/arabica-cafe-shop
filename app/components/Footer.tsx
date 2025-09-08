@@ -6,12 +6,12 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-12">
           <div className="space-y-6">
-            <h3 className="text-2xl font-bold tracking-wider text-white">CAFÉ AROMA</h3>
+            <h3 className="text-2xl font-bold tracking-wider text-white">ARABICA CAFE</h3>
             <address className="not-italic text-stone-400 text-sm leading-relaxed space-y-1">
-              <div>Cafe Aroma Cafe</div>
-              <div>123 Java Street</div>
-              <div>Mochtown, Roastville 98765</div>
-              <div>Espresso County, Caffeine State, USA</div>
+              <div>Arabica Cafe India</div>
+              <div>123 Mithanpura</div>
+              <div>Muzaffarpur, Bihar 842001</div>
+              <div>Bihar, India</div>
             </address>
             
             <div className="flex space-x-4 pt-4">
@@ -82,7 +82,7 @@ const Footer = () => {
         </div>
 
         <div className="text-center text-stone-400 text-sm mt-16 pt-8 border-t border-stone-700">
-          ©2024 MUSTAFIZUR ALL RIGHTS RESERVED
+          ©2025 | ADITYA RAJ | ALL RIGHTS RESERVED
         </div>
       </div>
     </footer>

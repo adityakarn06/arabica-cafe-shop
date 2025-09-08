@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Menu, X, Search } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import Searchbar from './SearchBar';
 import Link from 'next/link';
@@ -75,27 +75,27 @@ const Header = () => {
         )}
       </header>
 
-      <section className="px-4 py-16 md:px-8">
-        <div className="max-w-7xl mx-auto mt">
-          <div className="grid md:grid-cols-3 gap-8 items-center">
-            <div className="relative flex justify-between">
+      <section className="px-4 py-16 md:px-12">
+        <div className="">
+          <div className="flex justify-between items-center relative">
+            <div className="relative">
               <Image
                 src="/headerBarista.png"
                 alt="Coffee Cup"
                 width={192}
                 height={192}
-                className="w-full h-80 object-contain mt-32"
+                className="w-full h-84 object-contain mt-24"
               />
             </div>
 
-            <div className="space-y-8 text-center">
-              <h1 className="text-6xl md:text-9xl font-bold text-[#3B312B] leading-tight">
+            <div className="flex flex-col items-center text-center">
+              <h1 className="text-6xl md:text-[9rem] font-bold text-[#3B312B] leading-tight">
                 EXPRESSO
               </h1>
-              <h1 className="text-6xl md:text-8xl font-bold text-[#3B312B] leading-tight">
+              <h1 className="text-6xl md:text-[7rem] font-bold text-[#3B312B] leading-tight -mt-6">
                 YOURSELF
               </h1>
-              <p className="text-stone-600 text-lg max-w-md mx-auto">
+              <p className="text-[#726C65] text-lg max-w-lg mx-auto mb-4">
                 Pure Coffee, pure community, pure experience, because you
                 can never have to much coffee in your life.
               </p>
@@ -103,16 +103,14 @@ const Header = () => {
               <Searchbar />
             </div>
 
-            <div className="relative">
-              <div className="">
+            <div className="relative mb-20">
                   <Image
                     src="/headerCoffeeImage.png"
                     alt="Coffee Cup"
                     width={192}
                     height={192}
-                    className="w-full h-80 object-contain"
+                    className="w-full h-84 object-contain"
                   />
-              </div>
             </div>
           </div>
         </div>

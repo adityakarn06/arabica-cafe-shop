@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 
 const CoffeeNav = () => {
-  const coffeeTypes = ['DOPPIO', 'GALAO', 'CAPPUCCINO', 'MOCHA', 'GALAO', 'DOPPIO', 'GALAO', 'CAPPUCCINO', 'MOCHA'];
+  const coffeeTypes = ['FRAPPE', 'CAPPUCCINO', 'MOCHA', 'LATTE', 'EXPRESSO', 'COLD BREW', 'FRAPPE', 'CAPPUCCINO', 'MOCHA', 'LATTE', 'EXPRESSO', 'COLD BREW'];
 
   return (
     <div className="bg-stone-800 text-white py-6 overflow-hidden">

@@ -1,7 +1,6 @@
 'use client';
 
 import { ChevronLeft, ChevronRight, Plus, Star } from 'lucide-react';
-import { useState } from 'react';
 import Image from 'next/image';
 
 interface CoffeeItem {
@@ -14,7 +13,6 @@ interface CoffeeItem {
 }
 
 const CoffeeMenu = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
 
   const coffeeItems: CoffeeItem[] = [
     {
@@ -67,38 +65,27 @@ const CoffeeMenu = () => {
     }
   ];
 
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % coffeeItems.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + coffeeItems.length) % coffeeItems.length);
-  };
-
   return (
-    <section className="bg-stone-100 px-4 py-16 md:px-8 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="flex items-start justify-between mb-8">
+    <section className="bg-[#ECE7E0] py-16 overflow-hidden" id="menu">
+      <div className="w-full">
+        <div className="flex items-start justify-between mb-8 px-4 md:px-8">
           <div>
-            <h2 className="text-5xl md:text-6xl font-bold text-stone-800 mb-4">
+            <h2 className="text-5xl md:text-6xl font-bold text-[#3B312B] mb-4">
               OUR COFFEE
             </h2>
-            <p className="text-stone-600 text-lg max-w-md">
-              There's always room for coffee, it's not just coffee,<br />
-              its's an experience, life is better with coffee.
+            <p className="text-[#716E68] text-lg max-w-md">
+              There is always room for coffee, its not just coffee,<br />
+              it is an experience, life is better with coffee.
             </p>
           </div>
-          <div className="flex space-x-3">
+          <div className="flex space-x-3 pt-16">
             <button
-              onClick={prevSlide}
-              className="w-12 h-12 bg-stone-800 text-white rounded-full flex items-center justify-center hover:bg-stone-700 transition-colors"
+              className="w-12 h-12 bg-stone-800 text-[#ECE7E0] rounded-full flex items-center justify-center hover:bg-stone-700 transition-colors"
             >
               <ChevronLeft className="h-6 w-6" />
             </button>
             <button
-              onClick={nextSlide}
-              className="w-12 h-12 bg-stone-800 text-white rounded-full flex items-center justify-center hover:bg-stone-700 transition-colors"
+              className="w-12 h-12 bg-stone-800 text-[#ECE7E0] rounded-full flex items-center justify-center hover:bg-stone-700 transition-colors"
             >
               <ChevronRight className="h-6 w-6" />
             </button>
@@ -106,57 +93,52 @@ const CoffeeMenu = () => {
         </div>
 
         <div className="relative flex items-center justify-center mt-16">
-          <div className="flex items-end space-x-6">
+          <div className="flex items-end gap-4">
             {coffeeItems.slice(0, 4).map((item, index) => {
               const isCenterCard = index === 1 || index === 2;
-              const cardWidth = isCenterCard ? "w-80" : "w-64";
-              const cardHeight = isCenterCard ? "h-96" : "h-80";
-              const imageSize = isCenterCard ? 140 : 120;
-              const textSize = isCenterCard ? "text-2xl" : "text-xl";
-              const priceSize = isCenterCard ? "text-3xl" : "text-2xl";
               
               return (
                 <div
                   key={item.id}
-                  className={`${cardWidth} ${cardHeight} bg-stone-800 text-white rounded-2xl relative overflow-visible ${
-                    !isCenterCard ? 'opacity-75 scale-90' : ''
+                  className={`w-92 h-92 bg-[#3B312B] text-[#ECE7E0] rounded-2xl relative overflow-visible ${
+                    !isCenterCard ? 'scale-80' : ''
                   }`}
                 >
-                  <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 z-10">
+                  <div className="absolute -top-24 left-1/2 transform -translate-x-1/2 z-10">
                     <div className="relative">
                       <Image
                         src={item.image}
                         alt={item.name}
-                        width={imageSize}
-                        height={imageSize}
+                        width={240}
+                        height={240}
                         className="object-contain"
                       />
                     </div>
                   </div>
 
-                  <div className="pt-20 px-6 pb-6 h-full flex flex-col justify-between">
-                    <div>
-                      <h3 className={`${textSize} font-bold text-white mb-3 text-center`}>
+                  <div className="pt-20 px-6 pb-6 h-full flex flex-col justify-start">
+                    <div className='flex flex-col items-start'>
+                      <h3 className={`text-3xl font-bold text-[#ECE7E0] mb-3 text-center`}>
                         {item.name}
                       </h3>
 
-                      <div className="flex items-center justify-center mb-3">
-                        <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                        <span className="text-white ml-1 text-sm font-medium">
+                      <div className="flex items-center justify-center mb-3 p-2 bg-[#5F5750] rounded-xs">
+                        <Star className="w-4 h-4 text-[#ECE7E0] fill-current" />
+                        <span className="text-[#ECE7E0] ml-1 text-sm font-medium">
                           {item.rating}
                         </span>
                       </div>
 
-                      <p className="text-stone-300 mb-6 text-sm text-center">
-                        Volume <span className="text-white font-medium">{item.volume}</span>
+                      <p className="text-[#726C65] mb-6 text-lg text-center">
+                        Volume <span className="text-[#ECE7E0] font-medium">{item.volume}</span>
                       </p>
                     </div>
 
-                    <div className="flex items-center justify-between">
-                      <span className={`${priceSize} font-bold text-white`}>
+                    <div className="flex items-center justify-between border border-[#ECE7E0]">
+                      <span className={`text-3xl font-bold text-[#ECE7E0] py-2 pl-4`}>
                         {item.price}
                       </span>
-                      <button className="w-12 h-12 bg-stone-200 text-stone-800 rounded-lg flex items-center justify-center hover:bg-white transition-colors">
+                      <button className="w-14 h-14 bg-[#ECE7E0] text-[#3B312B] flex items-center justify-center hover:bg-white transition-colors">
                         <Plus className="h-6 w-6" />
                       </button>
                     </div>

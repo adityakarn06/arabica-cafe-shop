@@ -93,7 +93,7 @@ const CoffeeMenu = () => {
         </div>
 
         <div className="relative flex items-center justify-center mt-8 md:mt-16">
-          <div className="flex items-end gap-2 md:gap-4 px-4 md:px-0 pb-4 md:pb-0">
+          <div className="flex items-end gap-2 md:gap-4 overflow-x-auto px-4 md:px-0 pb-4 md:pb-0">
             {coffeeItems.slice(0, 4).map((item, index) => {
               const isCenterCard = index === 1 || index === 2;
               

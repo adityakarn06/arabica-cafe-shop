@@ -37,9 +37,9 @@ const Header = () => {
               </Link>
             ))}
           </nav>
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2 md:space-x-4">
             <Link href="#menu">
-            <button className="bg-[#3B312B] text-[#ECE7E0] px-8 py-3 font-semibold hover:bg-stone-900 transition-colors">
+            <button className="bg-[#3B312B] text-[#ECE7E0] px-4 py-2 md:px-8 md:py-3 font-semibold hover:bg-stone-900 transition-colors text-sm md:text-base">
               Order Now
             </button>
             </Link>
@@ -75,10 +75,10 @@ const Header = () => {
         )}
       </header>
 
-      <section className="px-4 py-16 md:px-12">
+      <section className="px-4 py-8 md:py-16 md:px-12">
         <div className="">
-          <div className="flex justify-between items-center relative">
-            <div className="relative">
+          <div className="flex flex-col md:flex-row md:justify-between md:items-center relative">
+            <div className="hidden md:block relative">
               <Image
                 src="/headerBarista.png"
                 alt="Coffee Cup"
@@ -88,22 +88,24 @@ const Header = () => {
               />
             </div>
 
-            <div className="flex flex-col items-center text-center">
-              <h1 className="text-6xl md:text-[9rem] font-bold text-[#3B312B] leading-tight">
+            <div className="flex flex-col items-center text-center px-4">
+              <h1 className="text-4xl sm:text-5xl md:text-[9rem] font-bold text-[#3B312B] leading-tight">
                 EXPRESSO
               </h1>
-              <h1 className="text-6xl md:text-[7rem] font-bold text-[#3B312B] leading-tight -mt-6">
+              <h1 className="text-3xl sm:text-4xl md:text-[7rem] font-bold text-[#3B312B] leading-tight -mt-2 md:-mt-6">
                 YOURSELF
               </h1>
-              <p className="text-[#726C65] text-lg max-w-lg mx-auto mb-4">
+              <p className="text-[#726C65] text-base md:text-lg max-w-lg mx-auto mb-6 px-4">
                 Pure Coffee, pure community, pure experience, because you
                 can never have to much coffee in your life.
               </p>
               
-              <Searchbar />
+              <div className="w-full max-w-md">
+                <Searchbar />
+              </div>
             </div>
 
-            <div className="relative mb-20">
+            <div className="hidden md:block relative mb-20">
                   <Image
                     src="/headerCoffeeImage.png"
                     alt="Coffee Cup"

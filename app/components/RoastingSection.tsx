@@ -27,18 +27,18 @@ const RoastingSection = () => {
   return (
     <section className="bg-[#ECE7E0] text-[#3B312B] px-4 py-16 md:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-7xl font-extrabold mb-6">
+        <div className="text-center mb-8 md:mb-16">
+          <h2 className="text-3xl md:text-5xl lg:text-7xl font-extrabold mb-4 md:mb-6">
             OUR ROASTING
           </h2>
-          <p className="text-[#706C64] max-w-3xl mx-auto text-lg leading-relaxed">
-            A cup of coffee on a warm summer day reminds you there is<br />
-            bright side to every day. There is a great big coffee world<br />
+          <p className="text-[#706C64] max-w-3xl mx-auto text-base md:text-lg leading-relaxed px-4">
+            A cup of coffee on a warm summer day reminds you there is<br className="hidden md:block" />
+            bright side to every day. There is a great big coffee world<br className="hidden md:block" />
             waiting for you. And it tastes great!
           </p>
         </div>
 
-        <div className="grid grid-cols-3">
+        <div className="hidden md:grid grid-cols-3">
           <div className='flex flex-col items-start gap-44 justify-between mt-48'>
             <Image
               src="/roaster1.png"
@@ -82,6 +82,24 @@ const RoastingSection = () => {
               />
             </div>
           </div>
+        </div>
+        
+        {/* Mobile Layout */}
+        <div className="md:hidden space-y-8">
+          {roastTypes.map((roast, index) => (
+            <div key={roast.name} className="flex flex-col items-center">
+              <div className="mb-4">
+                <Image
+                  src={roast.image}
+                  alt={roast.name}
+                  width={200}
+                  height={300}
+                  className="object-contain"
+                />
+              </div>
+              <h3 className="text-2xl font-bold text-center">{roast.name}</h3>
+            </div>
+          ))}
         </div>
       </div>
     </section>
